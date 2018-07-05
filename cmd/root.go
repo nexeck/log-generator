@@ -27,6 +27,7 @@ to quickly create a Cobra application.`,
 
 var logLevel string
 var logOutput string
+var logInterval int
 
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
@@ -41,7 +42,8 @@ func init() {
     cobra.OnInitialize(initLogger)
 
     rootCmd.PersistentFlags().StringVar(&logLevel, "level", "debug", "Enable debug output")
-    rootCmd.PersistentFlags().StringVar(&logOutput, "output", "text", "asd")
+    rootCmd.PersistentFlags().StringVar(&logOutput, "output", "text", "text or json")
+    rootCmd.PersistentFlags().IntVar(&logInterval, "interval", 1000, "Interval in ms")
 }
 
 // initConfig reads in config file and ENV variables if set.

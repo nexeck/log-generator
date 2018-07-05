@@ -32,7 +32,7 @@ to quickly create a Cobra application.`,
                 Str("IPv6", randomdata.IpV6Address()).
                 Bool("Bool", randomdata.Boolean()).
                 Msg(randomdata.SillyName())
-            time.Sleep(100 * time.Millisecond)
+            time.Sleep(time.Duration(logInterval) * time.Millisecond)
         }
     },
 }
